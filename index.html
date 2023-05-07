@@ -2,7 +2,6 @@
 <html>
 <head>
 <title> Summer </title>
-<script defer src="/_vercel/insights/script.js"></script>
     <style>
       
         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
@@ -28,11 +27,21 @@
             font-size: 24px;
             text-shadow: 0 0 5px white;
         }
+              #timer2 {
+            color: white;
+            
+            border: 2.5px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+            font-size: 24px;
+            text-shadow: 0 0 5px white;
+        }
     </style>
-  <h1>  Now - Summer  </h1>
+  <h1> (Russia) Now - Summer/ Now - Last bell (Russia)</h1>
 
 </head>
-<body>
+  <body>
 
     <div id="timer"></div>
     <script>
@@ -61,6 +70,41 @@
                   if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("timer").innerHTML = "Поздравляю с началом лета.";
+            }
+
+        }, 10);
+
+    </script>
+</body>
+<body>
+
+    <div id="timer2"></div>
+    <script>
+
+        var countDownDate2 = new Date("May 21, 2023 00:00:00").getTime();
+
+
+        var x = setInterval(function() {
+
+
+            var now = new Date().getTime();
+
+
+            var distance = countDownDate2 - now;
+
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            var milliseconds = distance % 1000;
+
+
+            document.getElementById("timer2").innerHTML = days + "д " + hours + "ч "
+            + minutes + "м " + seconds + "с " + milliseconds + "мс ";
+                  if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer2").innerHTML = "Поздравляю с началом лета.";
             }
 
         }, 10);
